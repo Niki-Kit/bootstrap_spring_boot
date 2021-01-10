@@ -32,8 +32,8 @@ public class PeopleController {
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("person") Person person, @ModelAttribute("role") Role role ) {
-        personService.save(person, role);
+    public String create(@ModelAttribute("person") Person person) {
+        personService.save(person);
         return "redirect:/admin";
     }
 

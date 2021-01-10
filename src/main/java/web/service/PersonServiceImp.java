@@ -35,7 +35,7 @@ public class PersonServiceImp implements PersonService, UserDetailsService {
         return userFromDb.orElse(new Person());
     }
     @Transactional
-    public boolean save(Person person, Role role) {
+    public boolean save(Person person) {
         Set<Role> roles = new HashSet<>();
         roles.add( roleDAO.findByName(person.getPole()));
         person.setRoles(roles);
